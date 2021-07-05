@@ -17,3 +17,17 @@ Make a route to the home page
 def index():
     return "<h1> Welcome to Engineering 89 DevOps team </h1> "
 ```
+```
+# Let's create a welcome page
+@app.route("/welcome/")
+def welcome():
+    return render_template("welcome.html")
+```
+- Create a decorator to route traffic to a login page
+- Display two messages of your choice in heading1 and heading2
+````
+@app.route("/login/")
+def login(): # redirect and url_for we need to import to redirect users
+    # return "<h1> Please Login </h1> <h2> Using your email and password </h2> "
+    return redirect(url_for("welcome"))
+````
